@@ -4,9 +4,19 @@
   box-sizing: border-box;
 }
 
+:root{
+  --main-background-color: #0E1220;
+  --second-background-color: #101828;
+  --text-color: #B7BABE;
+  --main-color: #4CD964;
+  --default-black: #0E1220;
+  --default-white: #B7BABE;
+  --default-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 body {
-  background-color: #0E1220;
-  color: #B7BABE;
+  background-color: var(--main-background-color);
+  color: var(--default-white);
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
@@ -20,7 +30,7 @@ body {
 h1 {
   margin-bottom: 0;
   text-align: center;
-  color: #4CD964;
+  color: var(--main-color);
 }
 
 .filter-container {
@@ -39,8 +49,8 @@ h1 {
 
 .post {
   position: relative;
-  background-color: #101828;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: var(--second-background-color);
+  box-shadow: var(--default-shadow);
   border-radius: 3px;
   padding: 30px;
   margin: 40px 0;
@@ -70,8 +80,8 @@ h1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #4CD964;
-  color: #0E1220;
+  background: var(--main-color);
+  color: var(--default-black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +101,7 @@ h1 {
 }
 
 .circle {
-  background-color: #4CD964;
+  background-color: var(--main-color);
   width: 10px;
   height: 10px;
   border-radius: 50%;
