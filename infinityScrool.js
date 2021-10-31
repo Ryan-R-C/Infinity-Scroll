@@ -36,10 +36,15 @@ const showLoading = () =>{
     loading.classList.add('show')
     removeLoading()
 }
+const getNextPosts = () =>{
+    page ++
+    addPostsIntoDom()
+}
 
 const removeLoading = () =>{
     setTimeout(() => {
         loading.classList.remove('show')
+        getNextPosts()
     }, 1000)
 }
 window.addEventListener('scroll', () => {
