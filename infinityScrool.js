@@ -31,10 +31,17 @@ const addPostsIntoDom = async () => {
 }
 addPostsIntoDom()
 
+
 const showLoading = () =>{
     loading.classList.add('show')
+    removeLoading()
 }
 
+const removeLoading = () =>{
+    setTimeout(() => {
+        loading.classList.remove('show')
+    }, 1000)
+}
 window.addEventListener('scroll', () => {
     const {clientHeight, scrollHeight, scrollTop} = document.documentElement
     const isPageBottomAlmostReached = scrollTop + clientHeight >= scrollHeight -  10
