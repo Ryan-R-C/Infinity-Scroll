@@ -1,5 +1,6 @@
 const postsContainer = document.querySelector('#posts-container')
-
+const loading = document.querySelector('.loader')
+ 
 
 let page = 1
 
@@ -30,10 +31,14 @@ const addPostsIntoDom = async () => {
 }
 addPostsIntoDom()
 
+const showLoading = () =>{
+    loading.classList.add('show')
+}
+
 window.addEventListener('scroll', () => {
     const {clientHeight, scrollHeight, scrollTop} = document.documentElement
     const isPageBottomAlmostReached = scrollTop + clientHeight >= scrollHeight -  10
     if ( isPageBottomAlmostReached ){
-        console.log("The page bottom is almost reached!!!")
+        showLoading()
     }
 })
