@@ -1,3 +1,6 @@
+const postsContainer = document.querySelector('#posts-container')
+
+
 let page = 1
 
 const getPosts = async () => {
@@ -7,9 +10,8 @@ const getPosts = async () => {
 
 const addPostsIntoDom = async () => {
     const posts = await getPosts()
-    const postsTemplate = posts.map(({ id, title, body}) => 
-        {
-            `<section>
+    const postsTemplate = posts.map(({ id, title, body}) =>`
+            <section class="post">
                 <div class="number">
                 ${id}
                 </div>
@@ -21,6 +23,9 @@ const addPostsIntoDom = async () => {
                         ${body}
                     </p>
                 </article>
-            </section>`})
+            </section>`
+        
+        ).join('')
+        postsContainer.innerHTML += postsTemplate
 }
 addPostsIntoDom()
