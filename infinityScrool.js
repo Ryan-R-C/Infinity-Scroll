@@ -7,18 +7,18 @@ const getPosts = async () => {
 
 const addPostsIntoDom = async () => {
     const posts = await getPosts()
-    const postsTemplate = posts.map(item => 
+    const postsTemplate = posts.map(({ id, title, body}) => 
         {
             `<section>
                 <div class="number">
-                ${item.id}
+                ${id}
                 </div>
                 <article class="posts-info">
                     <h3 class="posts-title">
-                        ${item.title}
+                        ${title}
                     </h3>
                     <p class="post-body">
-                        ${item.body}
+                        ${body}
                     </p>
                 </article>
             </section>`})
