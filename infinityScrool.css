@@ -41,6 +41,18 @@ h1 {
   color: var(--main-color);
   font-size: 4rem;
 }
+h1::before{
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/triangle.svg') no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: '';
+  min-height: 15%;
+  position: absolute;
+  transform-origin: left;
+  transform: translateX(-5%);
+  width: 150px;
+  z-index: -1;
+}
 
 .filter-container {
   margin-top: 20px;
