@@ -10,9 +10,9 @@ filter.addEventListener('input', event => {
         const postBody = post.querySelector('.post-body').textContent.toLowerCase()
 
         if(postTitle.includes(inputValue) || postBody.includes(inputValue)){
-            post.style.backgroundColor = "red"
+            post.style.display = "flex"
             return
         }
-        post.style.backgroundColor = "black"
+        post.style.display = "none"
     })
 })
