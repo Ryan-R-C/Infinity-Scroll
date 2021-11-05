@@ -5,10 +5,13 @@ filter.addEventListener('input', event => {
 
     const posts = document.querySelectorAll('.post')
 
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
         const postTitle = post.querySelector('.post-title').textContent
         const postBody = post.querySelector('.post-body').textContent
 
-    console.log({postTitle, postBody})
+        if(postTitle.includes(inputValue) || postBody.includes(inputValue)){
+            console.log(`post ${index + 1 }, value searched ${inputValue}`);
+
+        }
     })
 })
