@@ -37,10 +37,10 @@ const showLoading = () =>{
     removeLoading()
 }
 const getNextPosts = () =>{
-    setTimeout(() => {
+    setTimeout(() => {//to the it not appear at same time that loader is displayed:
         page ++
         addPostsIntoDom()
-    }, 300 )
+    }, 300 )//this time is loader's animation time 
 }
 
 const removeLoading = () =>{
