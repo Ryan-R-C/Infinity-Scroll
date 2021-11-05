@@ -16,8 +16,8 @@ const addPostsIntoDom = async () => {
                 <div class="number">
                 ${id}
                 </div>
-                <article class="posts-info">
-                    <h3 class="posts-title">
+                <article class="post-info">
+                    <h3 class="post-title">
                         ${title}
                     </h3>
                     <p class="post-body">
