@@ -11,6 +11,8 @@ filter.addEventListener('input', event => {
 
         if(postTitle.includes(inputValue) || postBody.includes(inputValue)){
             post.style.backgroundColor = "red"
+            return
         }
+        post.style.backgroundColor = "black"
     })
 })
