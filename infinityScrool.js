@@ -37,8 +37,10 @@ const showLoading = () =>{
     removeLoading()
 }
 const getNextPosts = () =>{
-    page ++
-    addPostsIntoDom()
+    setTimeout(() => {
+        page ++
+        addPostsIntoDom()
+    }, 300 )
 }
 
 const removeLoading = () =>{
