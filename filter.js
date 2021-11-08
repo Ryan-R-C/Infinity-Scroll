@@ -1,6 +1,6 @@
 const filter = document.querySelector('#filter')
 
-const showMatchedPosts = post => {
+const showMatchedPosts = inputValue => post => {//closure, passes a external element
     const postTitle = post.querySelector('.post-title').textContent.toLowerCase()
     const postBody = post.querySelector('.post-body').textContent.toLowerCase()
 
@@ -22,7 +22,7 @@ const handleInputValue = event => {
 
     const posts = document.querySelectorAll('.post')
 
-    posts.forEach(showMatchedPosts)
+    posts.forEach(showMatchedPosts(inputValue))
 }
 
 filter.addEventListener('input', handleInputValue)
