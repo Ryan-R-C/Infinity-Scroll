@@ -49,10 +49,12 @@ const removeLoading = () =>{
         getNextPosts()
     }, 1000)
 }
-window.addEventListener('scroll', () => {
+const handleScrollToPageBottom = () => {
     const {clientHeight, scrollHeight, scrollTop} = document.documentElement
     const isPageBottomAlmostReached = scrollTop + clientHeight >= scrollHeight -  10
     if ( isPageBottomAlmostReached ){
         showLoading()
     }
-})
+}
+
+window.addEventListener('scroll', handleScrollToPageBottom)

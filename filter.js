@@ -3,7 +3,8 @@ const filter = document.querySelector('#filter')
 const showMatchedPosts = inputValue => post => {//closure, passes a external element
     const postTitle = post.querySelector('.post-title').textContent.toLowerCase()
     const postBody = post.querySelector('.post-body').textContent.toLowerCase()
-    const containsInputValue = postTitle.includes(inputValue) || postBody.includes(inputValue)
+    const containsInputValue = postTitle.includes(inputValue) ||
+    postBody.includes(inputValue)
 
     //Check if the Post Content has the inputValue
     if(containsInputValue){//Incluedes is casa sensitive
