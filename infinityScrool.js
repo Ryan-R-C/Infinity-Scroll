@@ -5,29 +5,38 @@ const loading = document.querySelector('.loader')
 let page = 1
 
 const getPosts = async () => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${page}`)
+    const response = await
+     fetch(`https://jsonplaceholder.typicode.com/posts?_limit=5&_page=${page}`)
     return response.json()
 }
 
+const generateTemplate = posts => posts.map(
+    //generates the content of postsTemplate to add it into DOM
+    ({ id, title, body}) =>
+    `
+        <section class="post">
+            <div class="number">
+            ${id}
+            </div>
+            <article class="post-info">
+                <h3 class="post-title">
+                    ${title}
+                </h3>
+                <p class="post-body">
+                    ${body}
+                </p>
+            </article>
+        </section>
+    `
+    ).join('')
+
+
 const addPostsIntoDom = async () => {
     const posts = await getPosts()
-    const postsTemplate = posts.map(({ id, title, body}) =>`
-            <section class="post">
-                <div class="number">
-                ${id}
-                </div>
-                <article class="post-info">
-                    <h3 class="post-title">
-                        ${title}
-                    </h3>
-                    <p class="post-body">
-                        ${body}
-                    </p>
-                </article>
-            </section>`
-        
-        ).join('')
-        postsContainer.innerHTML += postsTemplate
+    const postsTemplate = generateTemplate(posts)
+
+    postsContainer.innerHTML += postsTemplate
+
 }
 addPostsIntoDom()
 
