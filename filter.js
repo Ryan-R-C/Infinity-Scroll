@@ -1,5 +1,6 @@
 const filter = document.querySelector('#filter')
-filter.addEventListener('input', event => {
+
+const handleInputValue = event => {
     const inputValue = event.target.value.toLowerCase()
     console.log(inputValue);
 
@@ -20,4 +21,6 @@ filter.addEventListener('input', event => {
         //all elements that does not have the inputValue will not be displayed
         post.style.display = "none"
     })
-})
+}
+
+filter.addEventListener('input', handleInputValue())
