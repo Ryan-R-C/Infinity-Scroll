@@ -1,7 +1,7 @@
 # Infinity-Scrool
 
-
-![PokeDev - Wide](https://i.ibb.co/56qn8Y1/a-infinity-Scrool-wide.jpg)
+<a href="https://ryan-r-c.github.io/Infinity-Scroll/" target="_blank" rel="image link">![Infity Scroll Page  Wide](https://i.ibb.co/56qn8Y1/a-infinity-Scrool-wide.jpg)
+</a>
 
 
 ## A infinity scrool and filter app that consumes JSONPlaceHolder API
